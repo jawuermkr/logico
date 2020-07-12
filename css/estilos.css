@@ -1,0 +1,66 @@
+* {
+	margin: auto;
+	padding: 0%;
+}
+body {
+	background-image: url(../img/fondo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color:#cacaca !important;
+}
+.container {
+	margin-top: 4%;
+}
+header {
+	align-content: center;
+	text-align: center;
+	margin: 4%;
+}
+header img {
+	width: 150px;
+}
+.sidebar {
+    margin-top: 10px !important;
+}
+.post-s {
+	background:rgb(255, 255, 255, 0.2);
+	padding:2%;
+}
+.oculto {
+	display: none;
+}
+header h1 {
+	display: none;
+}
+.registro {
+	font-size: 22px;
+	text-align: justify;
+}
+.img-perfil {
+	text-align: center;
+}
+.img-perfil img{
+	width:250px;
+	border-radius: 80px;
+}
+.login {
+	text-align: center;
+}
+.login img {
+	margin-bottom: 3%;
+}
+.notas {
+	padding: 2%;
+	border-radius: 10px;
+	background-color:rgba(0, 0, 0, 0.6);
+}
+.reg {
+	margin-top: 4%;
+}
+footer {
+	padding:4%;
+	margin-top: 6%;
+	text-align: center;
+	color: #cacaca;
+}
