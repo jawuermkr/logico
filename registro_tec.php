@@ -21,7 +21,7 @@
                 <form method="post" action="registro_tec.php">
                     <input class="form-control" name="name" type="text" placeholder="Nombres"/>
                     <input class="form-control" name="f-name" type="text" placeholder="Apellidos"/>
-                    <select class="form-control" name="t-doc" type="text">
+                    <select class="form-control" name="tdocu" type="text">
                         <option value="C.C.">Cédula de Ciudadanía</option>
                         <option value="C.E.">Cédula de Extranjería</option>
                         <option value="C">Contraseña</option>
@@ -55,36 +55,37 @@
                     <input class="btn form-control btn-outline-success" name="btn-rt" type="submit" value="Enviar Registro" />
                 </form>
                 <?php
-                
                 // INSERTAR
-                
                 if (isset($_POST['btn-rt'])){
                     
                     $rol = "tec";
-                    $nom = $_POST['name'];
-                    $apell = $_POST['f-name'];
-                    $tdoc = $_POST['t-doc'];
+                    $nomo = $_POST['name']; 
+                    $apelli = $_POST['f-name'];
+                    $tdocume = $_POST['tdocu'];
                     $nd = $_POST['n-d'];
-                    $loc = $_POST['localidad'];
-                    $email = $_POST['mail'];
-                    $celu = $_POST['cel'];
-                    $pass = $_POST['clave'];
-                    $des = "Actualiza esta sección con tu presentación, conocimientos y habilidades que verán tus clientes.";
-                    $foto = "img/perfil.png";
-                    
-                    if($rol=="" || $nom=="" || $apell=="" || $tdoc="" || $nd=="" || $loc=="" || $email=="" || $celu=="" || $pass==""){
-                        echo "Los campos son obligatorios";
+                    $loka = $_POST['localidad'];
+                    $ema = $_POST['mail'];
+                    $tel = $_POST['cel'];
+                    $clavenew = $_POST['clave'];
+                    $des = "Actualiza esta sección con tu perfíl profesional.";
+                    $pic = "img/perfil.png";
+      
+                    if($nomo == "" || $nd == "" || $clavenew == ""){
+                        echo "Completa los datos";
                     } else {
                     
                     include("abrir_conexion.php");
-
-                    $conexion->query("INSERT INTO $tablaTecnicos (rol,nombres,apellidos,t_documento,n_documento,localidad,email,celular,clave,,descripcion,foto) values('$rol','$nom','$apell','$tdoc','$nd','$loc','$email','$celu','$pass','$des','$foto')"); 
+      
+                    $conexion->query("INSERT INTO $tablaTecnicos
+                    (rol,nombres,apellidos,t_documento,n_documento,localidad,email,celular,clave,descripcion,foto)
+                    values('$rol','$nomo','$apelli','$tdocume','$nd','$loka','$ema','$tel','$clavenew','$des','$pic')"); 
                     
                     include("cerrar_conexion.php");
                     echo "<center><h3 class=\"alert-success\">Los datos se guardaron corectamente</h3></center>";
                     echo "<center><a href=\"log_tec.php\">¡Ingresar Ahora!</a></center>";
                     }
                 }
+                
                 ?>
             </div>
         </div>
